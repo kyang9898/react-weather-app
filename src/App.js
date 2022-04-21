@@ -4,10 +4,7 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-
 function App() {
-
-  
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
@@ -55,14 +52,13 @@ function App() {
     return `${day}, ${month} ${date} ${year}`;
   };
 
-    function getDate()
-  {
-      let currentDate = new Date();
-      let cMonth = currentDate.getMonth() + 1;
-      let cDay = currentDate.getDate();
-      let cYear = currentDate.getFullYear();
+  function getDate() {
+    let currentDate = new Date();
+    let cMonth = currentDate.getMonth() + 1;
+    let cDay = currentDate.getDate();
+    let cYear = currentDate.getFullYear();
 
-      return cMonth + "/" + cDay + "/" + cYear;
+    return cMonth + "/" + cDay + "/" + cYear;
   }
   return (
     <div
@@ -90,7 +86,9 @@ function App() {
             <div className="location-box">
               <div className="location">
                 {weather.name}, {weather.sys.country}
+                <div></div> //get zipcode
               </div>
+              <div></div> //get current time
               <div className="date">{buildDate(new Date())}</div>
               <div className="date">{getDate(new Date())}</div>
             </div>
@@ -99,6 +97,10 @@ function App() {
                 {Math.round((weather.main.temp * 9) / 5) + 32}°F
               </div>
               <div className="weather">{weather.weather[0].main}</div>
+              <div> </div> //get hi-temp
+              <div></div> //get lo-temp
+              <div></div> //feels like temp
+              <div></div> //humidity
             </div>
           </div>
         ) : (
@@ -109,6 +111,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
