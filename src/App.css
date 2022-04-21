@@ -52,7 +52,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #EEEEEE;
+  background: grey;
   font-size: small;
   text-align: center;
 }

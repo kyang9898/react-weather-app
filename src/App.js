@@ -4,10 +4,12 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
+
 function App() {
+
+  
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
-  
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -52,16 +54,16 @@ function App() {
 
     return `${day}, ${month} ${date} ${year}`;
   };
-  
-//   function getDate()
-// {
-//     let currentDate = new Date();
-//     let cMonth = currentDate.getMonth() + 1;
-//     let cDay = currentDate.getDate();
-//     let cYear = currentDate.getFullYear();
 
-//     return cMonth + "/" + cDay + "/" + cYear;
-// }
+  //   function getDate()
+  // {
+  //     let currentDate = new Date();
+  //     let cMonth = currentDate.getMonth() + 1;
+  //     let cDay = currentDate.getDate();
+  //     let cYear = currentDate.getFullYear();
+
+  //     return cMonth + "/" + cDay + "/" + cYear;
+  // }
   return (
     <div
       className={
@@ -92,7 +94,9 @@ function App() {
               <div className="date">{dateBuilder(new Date())}</div>
             </div>
             <div className="weather-box">
-              <div className="temp">{Math.round(weather.main.temp * 9/5) + 32}°F</div>
+              <div className="temp">
+                {Math.round((weather.main.temp * 9) / 5) + 32}°F
+              </div>
               <div className="weather">{weather.weather[0].main}</div>
             </div>
           </div>
@@ -104,5 +108,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
