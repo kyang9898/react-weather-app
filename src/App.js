@@ -23,7 +23,7 @@ function App() {
     }
   };
 
-  const dateBuilder = (d) => {
+  const buildDate = (d) => {
     let months = [
       "January",
       "February",
@@ -91,7 +91,7 @@ function App() {
               <div className="location">
                 {weather.name}, {weather.sys.country}
               </div>
-              <div className="date">{dateBuilder(new Date())}</div>
+              <div className="date">{buildDate(new Date())}</div>
             </div>
             <div className="weather-box">
               <div className="temp">
