@@ -55,15 +55,15 @@ function App() {
     return `${day}, ${month} ${date} ${year}`;
   };
 
-  //   function getDate()
-  // {
-  //     let currentDate = new Date();
-  //     let cMonth = currentDate.getMonth() + 1;
-  //     let cDay = currentDate.getDate();
-  //     let cYear = currentDate.getFullYear();
+    function getDate()
+  {
+      let currentDate = new Date();
+      let cMonth = currentDate.getMonth() + 1;
+      let cDay = currentDate.getDate();
+      let cYear = currentDate.getFullYear();
 
-  //     return cMonth + "/" + cDay + "/" + cYear;
-  // }
+      return cMonth + "/" + cDay + "/" + cYear;
+  }
   return (
     <div
       className={
@@ -92,6 +92,7 @@ function App() {
                 {weather.name}, {weather.sys.country}
               </div>
               <div className="date">{buildDate(new Date())}</div>
+              <div className="date">{getDate(new Date())}</div>
             </div>
             <div className="weather-box">
               <div className="temp">
